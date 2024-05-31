@@ -10,24 +10,64 @@ public class Archivio {
         prodotti = new ArrayList<>();
     }
 
-    public void aggiungiElemento(Object elemento) {
-        prodotti.add(elemento);
+    public void aggiungiProdotto(Object prodotto) {
+        prodotti.add(prodotto);
     }
 
-    public List<Object> getElementi() {
-        return prodotti;
-    }
 
-    public void stampaElementi() {
-        for (Object elemento : prodotti) {
-            System.out.println(elemento);
+    public void stampaProdotto() {
+        for (Object prodotto : prodotti) {
+            System.out.println(prodotto);
         }
     }
 
     public void eliminaEelementoISBN(int ISBN) {
-        
+
     }
 
+    public void ricercaISBN(int ISBN) {
+        List<Object> risultato = prodotti.stream()
+                .filter(prodotto -> Catalogo.getCodiceISBN() == ISBN)
+                .toList();
+
+        if (!risultato.isEmpty()) {
+            System.out.println("ISBN " + ISBN + ": " + risultato);
+        } else {
+            System.out.println("Nessun elemento trovato per l' ISBN " + ISBN);
+        }
+    }
+
+    public void ricercaPerAnno(int anno) {
+        List<Object> risultato = prodotti.stream()
+                .filter(prodotto -> prodotto instanceof Catalogo && ((Catalogo) prodotto).getAnnoPubblicazione() == anno)
+                .toList();
+
+        if (!risultato.isEmpty()) {
+            System.out.println("ANNO " + anno + ": " + risultato);
+        } else {
+            System.out.println("Nessun elemento trovato per l'anno " + anno);
+        }
+    }
+
+    public void ricercaPerAutore(String autore) {
+        List<Object> risultato = prodotti.stream()
+                .filter(prodotto -> prodotto instanceof Libri && ((Libri) prodotto).getAutore() == autore)
+                .toList();
+
+        if (!risultato.isEmpty()) {
+            System.out.println("AUTORE " + autore + ": " + risultato);
+        } else {
+            System.out.println("Nessun elemento trovato per l'autore " + autore);
+        }
+    }
+
+    public List<Object> getProdotti() {
+        return prodotti;
+    }
+
+    public void setProdotti(List<Object> prodotti) {
+        this.prodotti = prodotti;
+    }
 
     @Override
     public String toString() {

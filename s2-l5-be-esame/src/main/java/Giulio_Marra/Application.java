@@ -22,13 +22,24 @@ public class Application {
         Riviste minotauro = new Riviste(563248, "Il minotauro", 2010, 167, Pariodicita.SEMESTRALE);
 
         //METODO PER AGGIUNGERE UN ELEMENTO
+        System.out.println("------------------METODO PER AGGIUNGERE UN ELEMENTO---------------------------------");
         Archivio archivio = new Archivio();
-        archivio.aggiungiElemento(fahrenheit);
-        archivio.aggiungiElemento(leviathan);
-        archivio.aggiungiElemento(focus);
-        archivio.stampaElementi();
+        archivio.aggiungiProdotto(fahrenheit);
+        archivio.aggiungiProdotto(leviathan);
+        archivio.aggiungiProdotto(focus);
+        archivio.stampaProdotto();
 
-        //METODO PER RIMUOVERE ELEMENTO TRAIMTE ISBB
+        //METODO PER RICERCARE PER ANNO
+        System.out.println("------------------METODO PER RICERCARE PER ANNO---------------------------------");
+        archivio.ricercaPerAnno(2002);
+
+        //METODO PER RICERCA TRAMITE AUTORE
+        System.out.println("------------------METODO PER RICERCARE PER AUTORE---------------------------------");
+        archivio.ricercaPerAutore("Ray Bradbury");
+
+        //METODO PER RICERCA ISBN
+
+        archivio.ricercaISBN(542563);
 
 
     }
