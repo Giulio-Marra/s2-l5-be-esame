@@ -1,10 +1,17 @@
 package Giulio_Marra;
 
 import Giulio_Marra.entities.Archivio;
+import Giulio_Marra.entities.Catalogo;
 import Giulio_Marra.entities.Libri;
 import Giulio_Marra.entities.Riviste;
 import Giulio_Marra.enums.Genere;
 import Giulio_Marra.enums.Pariodicita;
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class Application {
 
@@ -57,6 +64,20 @@ public class Application {
         archivio.eliminaProdottoISBN(514896);
         archivio.stampaProdotto();
 
+        //STAMPARE FILE DI ESTO
+        Archivio testarchivio = new Archivio();
+
+        File file = new File("src/testostampa.txt");
+
+        try {
+            List<Catalogo> listaDaStampare = archivio.getProdotti();
+            for (Catalogo prodotto : listaDaStampare) {
+                FileUtils.writeStringToFile(file, prodotto.toString() + System.lineSeparator(), StandardCharsets.UTF_8, true);
+            }
+            System.out.println("Contenuto dell'archivio scritto correttamente su file.");
+        } catch (IOException e) {
+            System.err.println("Errore durante la scrittura del file: " + e.getMessage());
+        }
 
     }
 }

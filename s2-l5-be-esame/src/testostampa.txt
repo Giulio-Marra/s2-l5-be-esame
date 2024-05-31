@@ -1,0 +1,4 @@
+Libri{autore='Douglas Adams', genere=FANTASCIENZA, Catalogo{codiceISBN=365414, titolo='Guida galattica per autostoppisti', annoPubblicazione=1980, numeroPagine=229}}
+Riviste{periodicita=SETTIMANALE, Catalogo{codiceISBN=5147896, titolo='La settimana enigmistica', annoPubblicazione=2010, numeroPagine=90}}
+Libri{autore='Ray Bradbury', genere=FANTASCIENZA, Catalogo{codiceISBN=368456, titolo='Fahrenheit 451', annoPubblicazione=1966, numeroPagine=166}}
+Libri{autore='Scott Westerfeld', genere=FANTASY, Catalogo{codiceISBN=542563, titolo='Leviathan trilogia', annoPubblicazione=2009, numeroPagine=1048}}
