@@ -35,6 +35,7 @@ public class Libri extends Catalogo {
         return "Libri{" +
                 "autore='" + autore + '\'' +
                 ", genere=" + genere +
+                ", " + super.toString() +
                 '}';
     }
 }

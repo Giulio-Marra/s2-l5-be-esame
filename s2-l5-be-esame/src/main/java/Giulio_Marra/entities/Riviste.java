@@ -23,6 +23,7 @@ public class Riviste extends Catalogo {
     public String toString() {
         return "Riviste{" +
                 "periodicita=" + periodicita +
+                ", " + super.toString() +
                 '}';
     }
 }
