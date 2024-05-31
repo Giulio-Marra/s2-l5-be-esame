@@ -1,7 +1,7 @@
 package Giulio_Marra.entities;
 
 public abstract class Catalogo {
-    private static int codiceISBN;
+    private int codiceISBN;
     private String titolo;
     private int annoPubblicazione;
     private int numeroPagine;
@@ -13,7 +13,7 @@ public abstract class Catalogo {
         this.numeroPagine = numeroPagine;
     }
 
-    public static int getCodiceISBN() {
+    public int getCodiceISBN() {
         return codiceISBN;
     }
 

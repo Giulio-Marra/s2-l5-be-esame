@@ -24,22 +24,38 @@ public class Application {
         //METODO PER AGGIUNGERE UN ELEMENTO
         System.out.println("------------------METODO PER AGGIUNGERE UN ELEMENTO---------------------------------");
         Archivio archivio = new Archivio();
+        archivio.aggiungiProdotto(darknebula);
+        archivio.aggiungiProdotto(guidagalattica);
+        archivio.aggiungiProdotto(settimanaenigmistica);
         archivio.aggiungiProdotto(fahrenheit);
         archivio.aggiungiProdotto(leviathan);
         archivio.aggiungiProdotto(focus);
+        archivio.aggiungiProdotto(minotauro);
         archivio.stampaProdotto();
 
         //METODO PER RICERCARE PER ANNO
+        System.out.println();
         System.out.println("------------------METODO PER RICERCARE PER ANNO---------------------------------");
         archivio.ricercaPerAnno(2002);
 
         //METODO PER RICERCA TRAMITE AUTORE
+        System.out.println();
         System.out.println("------------------METODO PER RICERCARE PER AUTORE---------------------------------");
-        archivio.ricercaPerAutore("Ray Bradbury");
+        System.out.println(archivio.ricercaAutore("Scott Westerfeld"));
+
 
         //METODO PER RICERCA ISBN
+        System.out.println();
+        System.out.println("------------------METODO PER RICERCARE PER ISBN---------------------------------");
+        System.out.println(archivio.ricercaISBN(845632));
 
-        archivio.ricercaISBN(542563);
+        //METODO PER ELIMINARE TRAMITE ISBN
+        System.out.println();
+        System.out.println("------------------METODO PER ELIMINARE TRAMITE ISBN---------------------------------");
+        archivio.eliminaProdottoISBN(845632);
+        archivio.eliminaProdottoISBN(563248);
+        archivio.eliminaProdottoISBN(514896);
+        archivio.stampaProdotto();
 
 
     }
